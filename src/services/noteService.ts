@@ -29,7 +29,7 @@ export async function fetchNotes({
   if (search && search.trim() !== "") {
     params.search = search.trim();
   }
-  const response = await axios.get(`/notes`, { params });
+  const response = await axios.get<NoteSearchResponse>(`/notes`, { params });
   return response.data;
 }
 
